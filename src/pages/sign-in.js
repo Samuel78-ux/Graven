@@ -16,7 +16,7 @@ const SignIn = () => {
 		<Page>
 			<div className="flex justify-center items-center h-screen absolute w-screen -z-10">
 				<Form
-					title="Sign In"
+					title="Connexion"
 					initialValues={initialValues}
 					onSubmit={handleSubmit}
 					className="w-72"
