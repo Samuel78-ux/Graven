@@ -3,7 +3,10 @@ import Link from "next/link";
 
 const AppBar = () => {
 	return (
-		<div className="flex shadow-lg py-4 justify-end">
+		<div className="flex shadow-lg p-4 justify-between">
+			<Link href="/" className="p-2 font-bold">
+				Accueil
+			</Link>
 			<div className="flex gap-4 mr-5">
 				<LinkAppBar className="bg-green-500 p-2" href="/sign-in">
 					Se connecter
