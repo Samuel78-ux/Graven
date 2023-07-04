@@ -14,7 +14,7 @@ const SignIn = () => {
 
 	return (
 		<Page>
-			<div className="flex justify-center items-center absolute h-screen w-screen">
+			<div className="flex justify-center items-center absolute h-screen w-screen -z-10">
 				<Form
 					title="Sign In"
 					initialValues={initialValues}
