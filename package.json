@@ -10,10 +10,17 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+<<<<<<< HEAD
     "axios": "^1.4.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
     "knex": "^2.4.2",
+=======
+    "clsx": "^1.2.1",
+    "eslint": "8.44.0",
+    "eslint-config-next": "13.4.7",
+    "formik": "^2.4.2",
+>>>>>>> ca8bc7deb03c25cbbc52ac01159282895eda38a6
     "next": "13.4.7",
     "postcss": "8.4.24",
     "react": "18.2.0",

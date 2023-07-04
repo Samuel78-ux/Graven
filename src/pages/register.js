@@ -1,20 +1,46 @@
-import React from "react";
 import axios from "axios";
+import Field from "@/components/Field";
+import Form from "@/components/Form";
 
-export default function Register() {
-	const [username, setUsername] = React.useState("");
-	const [password, setPassword] = React.useState("");
-
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		const res = await axios.post("/api/register", {
-			username,
-			password,
-		});
-		console.log(res.data);
-	};
-
-	return (
-		
-	);
+const initialValues = {
+  firstname: "",
+  lastname: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
 }
+
+const Register = () => {
+  const handleSubmit = (values) => {
+    console.log(values)
+  }
+
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Form
+        title="Register"
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        className="w-72"
+      >
+        <Field name="firstname" placeholder="Prénom" />
+        <Field name="lastname" placeholder="Nom" />
+        <Field name="email" placeholder="Email" />
+        <Field name="password" placeholder="Mot de passe" type="password" />
+        <Field
+          name="confirmPassword"
+          placeholder="Confirmer le mot de passe"
+          type="password"
+        />
+        <button
+          type="submit"
+          className="w-full bg-blue-400 text-white font-bold rounded px-2 py-1 hover:bg-blue-600 transition-all"
+        >
+          S'inscrire
+        </button>
+      </Form>
+    </div>
+  )
+}
+
+export default Register
