@@ -1,18 +1,16 @@
+import LinkAppBar from "@/components/LinkAppBar";
 import Link from "next/link";
 
 const AppBar = () => {
 	return (
 		<div className="flex shadow-lg py-4 justify-end">
 			<div className="flex gap-4 mr-5">
-				<Link className="bg-green-500 rounded text-white p-2" href="/sign-in">
+				<LinkAppBar className="bg-green-500 p-2" href="/sign-in">
 					Se connecter
-				</Link>
-				<Link
-					href="register"
-					className="bg-blue-500 rounded text-white px-3 py-2"
-				>
+				</LinkAppBar>
+				<LinkAppBar href="register" className="bg-blue-500 px-3 py-2">
 					S'inscrire
-				</Link>
+				</LinkAppBar>
 			</div>
 		</div>
 	);
