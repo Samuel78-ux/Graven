@@ -1,6 +1,6 @@
-import Field from "@/components/Field";
-import Form from "@/components/Form";
-import Page from "@/components/Page";
+import Field from "/components/Field";
+import Form from "/components/Form";
+import Page from "/components/Page";
 
 const initialValues = {
 	firstname: "",

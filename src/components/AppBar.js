@@ -1,5 +1,5 @@
-import LinkAppBar from "@/components/LinkAppBar";
 import Link from "next/link";
+import LinkAppBar from "./LinkAppBar";
 
 const AppBar = () => {
 	return (

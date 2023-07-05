@@ -1,4 +1,4 @@
-import AppBar from "@/components/AppBar";
+import AppBar from "./AppBar";
 
 const Page = (props) => {
 	const { children } = props;
