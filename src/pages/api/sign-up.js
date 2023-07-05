@@ -1,5 +1,8 @@
 import hashPassword from "@/api/utils/hashPassword";
 import mw from "@/api/utils/mw";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 const handler = mw({
 	POST: [
@@ -18,8 +21,7 @@ const handler = mw({
 
 				res.send({ result: user });
 			} catch (err) {
-				console.error(err);
-				res.send({ error: "Something wrong." });
+				res.status(500).send({ error: "Something wrong." });
 			}
 		},
 	],

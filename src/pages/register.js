@@ -1,18 +1,47 @@
+import { useRouter } from "next/router";
 import Field from "../components/Field";
 import Form from "../components/Form";
 import Page from "../components/Page";
+import api from "@/web/api";
+import * as yup from "yup";
 
 const initialValues = {
-	firstname: "",
-	lastname: "",
+	firstName: "",
+	lastName: "",
 	email: "",
 	password: "",
 	confirmPassword: "",
 };
 
+const validationSchema = yup.object().shape({
+	firstName: yup.string().required("Ce champ est requis"),
+	lastName: yup.string().required("Ce champ est requis"),
+	email: yup.string().email("Email invalide").required("Ce champ est requis"),
+	password: yup
+		.string()
+		.min(8, "Minimum 8 caractères")
+		.required("Ce champ est requis"),
+	confirmPassword: yup
+		.string()
+		.required("Ce champ est requis")
+		.test(
+			"match",
+			"Vous devez mettre les mêmes mot de passe",
+			function (value) {
+				return value === this.parent.password;
+			}
+		),
+});
+
 const Register = () => {
-	const handleSubmit = (values) => {
-		console.log(values);
+	const router = useRouter();
+	const handleSubmit = async (values, { resetForm }) => {
+		try {
+			await api.post("/sign-up", values);
+			router.push("/sign-in");
+		} catch (error) {
+			resetForm();
+		}
 	};
 
 	return (
@@ -21,11 +50,12 @@ const Register = () => {
 				<Form
 					title="Inscription"
 					initialValues={initialValues}
+					validationSchema={validationSchema}
 					onSubmit={handleSubmit}
 					className="w-72"
 				>
-					<Field name="firstname" placeholder="Prénom" />
-					<Field name="lastname" placeholder="Nom" />
+					<Field name="firstName" placeholder="Prénom" />
+					<Field name="lastName" placeholder="Nom" />
 					<Field name="email" placeholder="Email" />
 					<Field name="password" placeholder="Mot de passe" type="password" />
 					<Field

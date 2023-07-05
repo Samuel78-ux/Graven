@@ -1,15 +1,36 @@
+import api from "@/web/api";
 import Field from "../components/Field";
 import Form from "../components/Form";
 import Page from "../components/Page";
+import useSession from "@/web/hooks/useSession";
+import * as yup from "yup";
+import { useRouter } from "next/router";
 
 const initialValues = {
 	email: "",
 	password: "",
 };
 
+const validationSchema = yup.object().shape({
+	email: yup.string().email("Email invalide").required("Ce champ est requis"),
+	password: yup
+		.string()
+		.min(8, "Minimum 8 caractères")
+		.required("Ce champ est requis"),
+});
+
 const SignIn = () => {
-	const handleSubmit = (values) => {
-		console.log(values);
+	const { signIn } = useSession();
+	const router = useRouter();
+
+	const handleSubmit = async (values) => {
+		try {
+			const response = await api.post("/sign-in", values);
+			signIn(response);
+			router.push("/");
+		} catch (error) {
+			return;
+		}
 	};
 
 	return (
@@ -18,6 +39,7 @@ const SignIn = () => {
 				<Form
 					title="Connexion"
 					initialValues={initialValues}
+					validationSchema={validationSchema}
 					onSubmit={handleSubmit}
 					className="w-72"
 				>
