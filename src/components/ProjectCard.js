@@ -22,7 +22,7 @@ const ProjectCard = (props) => {
 						<div className="flex gap-3 text-slate-700">
 							<p>{convertPrice(price)}</p>
 							<p className="font-medium">|</p>
-							<p>{duration}</p>
+							<p>{duration} mois</p>
 						</div>
 					</div>
 				</div>

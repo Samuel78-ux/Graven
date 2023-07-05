@@ -1,7 +1,10 @@
 import Page from "@/components/Page";
 import ProjectCard from "@/components/ProjectCard";
+import useProjects from "@/web/hooks/useProjects";
 
 export default function Home() {
+	const { projects } = useProjects();
+
 	return (
 		<Page>
 			<div className="flex flex-col px-12 py-6">
@@ -9,16 +12,18 @@ export default function Home() {
 					Les différents projets
 				</p>
 				<div className="flex flex-wrap gap-10 justify-center py-6">
-					{[...Array(10)].map((x, i) => (
-						<ProjectCard
-							key={i}
-							src="/house.jpg"
-							name="Maison"
-							description="Une maison"
-							price="1000"
-							duration="1 mois"
-						/>
-					))}
+					{projects.map(
+						({ name, image, description, price, duration }, index) => (
+							<ProjectCard
+								key={index}
+								src={`/images/${image}`}
+								name={name}
+								description={description}
+								price={price}
+								duration={duration}
+							/>
+						)
+					)}
 				</div>
 			</div>
 		</Page>

@@ -49,6 +49,16 @@ const handler = mw({
 			}
 		},
 	],
+	GET: [
+		async (req, res) => {
+			try {
+				const projects = await prisma.project.findMany();
+				res.send({ result: projects });
+			} catch (error) {
+				res.status(500).send({ error: "Something went wrong." });
+			}
+		},
+	],
 });
 
 export default handler;
