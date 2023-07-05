@@ -1,7 +1,6 @@
 import convertPrice from "@/utils/convertPrice";
+import Image from "next/image";
 import Link from "next/link";
-
-const { default: Image } = require("next/image");
 
 const ProjectCard = (props) => {
 	const { name, description, src, price, duration } = props;
