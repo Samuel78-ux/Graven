@@ -2,11 +2,6 @@
 # Commande git pull
 git pull
 
-#npm i 
-npm i 
-
-# Commande npm run sync
-npm run sync
 # Commande docker build
 docker build -t docker_nextjs:development .
 # Commande docker run en mode détaché
