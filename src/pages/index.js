@@ -2,6 +2,7 @@ import Page from "../Components/Page";
 import ProjectCard from "../Components/ProjectCard";
 import useProjects from "../web/hooks/useProjects";
 
+
 export default function Home() {
 	const { projects } = useProjects();
 
