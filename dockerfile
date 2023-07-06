@@ -2,6 +2,8 @@ FROM node:16-alpine
 
 COPY .  .
 
+RUN ls
+
 RUN npm install
 
 RUN npm run sync
