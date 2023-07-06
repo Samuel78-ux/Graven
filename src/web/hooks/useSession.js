@@ -1,11 +1,14 @@
+import { useEffect } from "react";
 import { useSessionStore } from "../stores/session";
 
 const useSession = () => {
 	const { setToken, session, ...sessionRouter } = useSessionStore();
 
-	if (!session) {
-		setToken();
-	}
+	useEffect(() => {
+		if (!session) {
+			setToken();
+		}
+	}, [session, setToken]);
 
 	return { session, setToken, ...sessionRouter };
 };

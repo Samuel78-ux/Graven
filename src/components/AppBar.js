@@ -13,28 +13,30 @@ const AppBar = () => {
 				className="p-2 font-bold flex gap-2 text-xl items-center justify-center"
 			>
 				<HomeModernIcon className="w-6 h-6" />
-				JedImmo
+				<div>JedImmo</div>
 			</Link>
 			<div className="flex gap-4 mr-5">
-				{!session ? (
-					<>
+				{session ? (
+					<div>
 						<LinkAppBar className="bg-red-200 p-2" href="/dashboard">
 							Dashbord
 						</LinkAppBar>
+						<button
+							className="bg-red-500 px-3 py-2 rounded text-white"
+							onClick={signOut}
+						>
+							Se déconnecter
+						</button>
+					</div>
+				) : (
+					<div>
 						<LinkAppBar className="bg-green-500 p-2" href="/sign-in">
 							Se connecter
 						</LinkAppBar>
 						<LinkAppBar href="register" className="bg-blue-500 px-3 py-2">
 							S'inscrire
 						</LinkAppBar>
-					</>
-				) : (
-					<button
-						className="bg-red-500 px-3 py-2 rounded text-white"
-						onClick={signOut}
-					>
-						Se déconnecter
-					</button>
+					</div>
 				)}
 			</div>
 		</div>
