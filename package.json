@@ -16,7 +16,6 @@
 		"@emotion/react": "^11.11.1",
 		"@emotion/styled": "^11.11.0",
 		"@heroicons/react": "^2.0.18",
-		"@nextui-org/react": "^0.0.0-dev-v2-20230705005214",
 		"@prisma/client": "^4.16.2",
 		"autoprefixer": "10.4.14",
 		"axios": "^1.4.0",
