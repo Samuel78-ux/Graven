@@ -1,5 +1,5 @@
-import Page from "../components/Page";
-import ProjectList from "../components/ProjectList";
+import Page from "@/components/Page";
+import ProjectList from "@/components/ProjectList";
 
 const dashbord = () => {
 	const users = [
