@@ -1,6 +1,10 @@
 #!/bin/bash
 # Commande git pull
 git pull
+
+#npm i 
+npm i 
+
 # Commande npm run sync
 npm run sync
 # Commande docker build
