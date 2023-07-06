@@ -1,7 +1,7 @@
 import api from "@/web/api";
-import Field from "../components/Field";
-import Form from "../components/Form";
-import Page from "../components/Page";
+import Field from "../Components/Field";
+import Form from "../Components/Form";
+import Page from "../Components/Page";
 import useSession from "@/web/hooks/useSession";
 import * as yup from "yup";
 import { useRouter } from "next/router";

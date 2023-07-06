@@ -1,4 +1,4 @@
-import convertPrice from "@/utils/convertPrice";
+import convertPrice from "../utils/convertPrice";
 import Image from "next/image";
 import Link from "next/link";
 
