@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import Field from "../components/Field";
-import Form from "../components/Form";
-import Page from "../components/Page";
+import Field from "../Components/Field";
+import Form from "../Components/Form";
+import Page from "../Components/Page";
 import api from "@/web/api";
 import * as yup from "yup";
 
